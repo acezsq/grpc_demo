@@ -1,0 +1,24 @@
+syntax = "proto3"; // 版本声明，使用Protocol Buffers v3版本
+
+option go_package = ".;service";  // 指定生成的Go代码在你项目中的导入路径 和  包名
+
+// package pb; // 包名
+
+
+// 定义服务
+service SayHello {
+  // SayHello 方法
+  rpc SayHello (HelloRequest) returns (HelloResponse) {}
+}
+
+// 请求消息
+// 注意这里并不是赋值，而是定义的这个变量在这个message中的位置
+message HelloRequest {
+  string requestName = 1;
+  //  int64 age = 2;
+}
+
+// 响应消息
+message HelloResponse {
+  string responseReply = 1;
+}
